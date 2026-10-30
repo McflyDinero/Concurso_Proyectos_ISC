@@ -5,279 +5,34 @@
   <link rel="shortcut icon" href="./assets/img/logotsj.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- SEO Básico -->
   <title>XX Concurso de Proyectos de Innovación | ISC 2026</title>
   <meta name="description" content="Evento académico semestral de Ingeniería en Sistemas Computacionales en el Tecnológico Superior de Jalisco Zapopan: proyectos, conferencias e innovación tecnológica.">
   <meta name="keywords" content="ISC, sistemas computacionales, concurso proyectos, tecmm zapopan, tecnologia, frontend">
   <meta name="author" content="Academia de Sistemas Computacionales">
 
-  <!-- Open Graph para Redes Sociales y Mensajería -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="XX Concurso de Proyectos de Innovación - ISC 2026">
-  <meta property="og:description" content="Explora los proyectos de innovación tecnológica desarrollados por estudiantes de Ingeniería en Sistemas Computacionales.">
+  <meta property="og:description" content="Explora los proyectos de innovación tecnológica desarrollados por estudiantes de ISC.">
   <meta property="og:image" content="./assets/img/banner.png">
-  <meta property="og:url" content="https://TU_USUARIO.github.io/NOMBRE_DEL_REPO/">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="XX Concurso de Proyectos de Innovación - ISC 2026">
-  <meta name="twitter:description" content="Proyectos destacados, programa general y jurado calificador.">
-  <meta name="twitter:image" content="./assets/img/banner.png">
+  <meta property="og:url" content="https://McflyDinero.github.io/Concurso_Proyectos_ISC/">
 
   <!-- Bootstrap 5 & FontAwesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <!-- Tipografía Google Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      /* Paleta Institucional TecMM */
-      --primary: #33157A;
-      --accent: #E52E71;
-      --secondary: #1E208A;
-      --dark: #1f1f1f;
-      --gray: #6c757d;
-      --bg: #f8f9fb;
-      --surface: #ffffff;
-      --radius: 12px;
-      --transition: all 0.3s ease;
-    }
-
-    [data-theme="dark"] {
-      --primary: #8b5cf6;
-      --accent: #f43f5e;
-      --secondary: #312e81;
-      --dark: #f8fafc;
-      --gray: #94a3b8;
-      --bg: #0b0f19;
-      --surface: #151c2e;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background-color: var(--bg);
-      color: var(--dark);
-      line-height: 1.7;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    /* ===== NAVBAR ===== */
-    .navbar {
-      backdrop-filter: blur(12px);
-      background-color: rgba(33, 22, 64, 0.95);
-      transition: var(--transition);
-    }
-    .theme-toggle-btn {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #fff;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-    .theme-toggle-btn:hover {
-      background: var(--accent);
-      color: #fff;
-      transform: rotate(15deg);
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 90vh;
-      background: url('./assets/img/banner.png') center/cover no-repeat;
-      position: relative;
-      color: #fff;
-      display: flex;
-      align-items: center;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(33,22,64,.88), rgba(33,22,64,.55));
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 4vw, 3.8rem);
-    }
-
-    /* ===== CUENTA REGRESIVA ===== */
-    .countdown-section {
-      background: linear-gradient(135deg, #33157A 0%, #1E208A 100%);
-      padding: 3rem 0;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 10;
-    }
-    .countdown-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: var(--radius);
-      padding: 1.2rem 0.5rem;
-      backdrop-filter: blur(10px);
-      color: white;
-    }
-    .countdown-box span {
-      display: block;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(229, 46, 113, 0.35);
-    }
-    .countdown-box small {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      opacity: 0.9;
-    }
-
-    /* ===== BOTONES ===== */
-    .btn-primary {
-      background: var(--accent);
-      border: none;
-      color: #fff;
-      border-radius: var(--radius);
-      padding: .85rem 2rem;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-    .btn-primary:hover {
-      background: #c81d59;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(229, 46, 113, 0.35);
-      color: #fff;
-    }
-
-    /* ===== SECCIONES & CARDS ===== */
-    section {
-      padding: 5rem 0;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .section-title p {
-      max-width: 720px;
-      margin: auto;
-      color: var(--gray);
-    }
-    .card {
-      background-color: var(--surface);
-      color: var(--dark);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      transition: var(--transition);
-    }
-    [data-theme="dark"] .card {
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    [data-theme="dark"] .bg-white {
-      background-color: var(--surface) !important;
-    }
-    [data-theme="dark"] .text-muted {
-      color: var(--gray) !important;
-    }
-
-    /* ===== PROGRAMA ===== */
-    .program-time {
-      font-weight: 700;
-      color: var(--primary);
-    }
-    [data-theme="dark"] .program-time {
-      color: #38bdf8;
-    }
-
-    /* ===== PERSONAS ===== */
-    .person-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: hidden;
-    }
-    .person-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    .person-card img {
-      height: 250px;
-      object-fit: cover;
-      object-position: top;
-    }
-
-    /* ===== FORMULARIO INTERACTIVO ===== */
-    .form-control, .form-select {
-      border-radius: var(--radius);
-      padding: 0.75rem 1rem;
-      border: 1px solid rgba(0,0,0,0.15);
-      background-color: var(--surface);
-      color: var(--dark);
-      transition: var(--transition);
-    }
-    [data-theme="dark"] .form-control, [data-theme="dark"] .form-select {
-      background-color: #0b0f19;
-      color: #f8fafc;
-      border-color: rgba(255,255,255,0.2);
-    }
-    .form-control:focus, .form-select:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 0.25rem rgba(229, 46, 113, 0.25);
-    }
-    .is-valid-custom {
-      border-color: #22c55e !important;
-    }
-    .is-invalid-custom {
-      border-color: #ef4444 !important;
-    }
-
-    /* ===== CTA ===== */
-    .cta {
-      background: linear-gradient(90deg, #33157A, #7f54d8);
-      color: #fff;
-      text-align: center;
-      border-radius: var(--radius);
-      padding: 4rem 2rem;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #0b0d14;
-      color: #cbd5e1;
-    }
-    footer a {
-      color: #94a3b8;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    footer a:hover {
-      color: var(--accent);
-    }
-  </style>
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
 
-  <!-- NAVEGACIÓN SEMÁNTICA -->
+  <!-- NAVEGACIÓN -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Navegación principal">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#inicio">
-        <img src="./assets/img/logotsj.png" width="42" height="42" alt="Logotipo institucional TecMM Zapopan" class="me-2"[cite: 14]>
+        <img src="./assets/img/logotsj.png" width="42" height="42" alt="Logotipo institucional TecMM Zapopan" class="me-2">
         <strong>XX Concurso de Innovación</strong>
       </a>
       
@@ -290,11 +45,11 @@
           <li class="nav-item"><a class="nav-link" href="#bienvenida">Bienvenida</a></li>
           <li class="nav-item"><a class="nav-link" href="#programa">Programa</a></li>
           <li class="nav-item"><a class="nav-link" href="#labs">Laboratorios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
           <li class="nav-item"><a class="nav-link" href="#sede">Sede</a></li>
           <li class="nav-item"><a class="nav-link" href="#organizadores">Organizadores</a></li>
           <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <!-- Selector de Modo Oscuro -->
             <button id="themeToggle" class="theme-toggle-btn" aria-label="Alternar entre modo claro y modo oscuro">
               <i id="themeIcon" class="fa-solid fa-moon"></i>
             </button>
@@ -304,7 +59,7 @@
     </div>
   </nav>
 
-  <!-- HERO (HEADER PRINCIPAL) -->
+  <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="container hero-content">
       <h1 class="mb-3">XX Concurso de Proyectos de Innovación</h1>
@@ -316,10 +71,10 @@
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL SEMÁNTICO -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main id="main-content">
 
-    <!-- CUENTA REGRESIVA DINÁMICA -->
+    <!-- CUENTA REGRESIVA -->
     <section class="countdown-section" aria-label="Cuenta regresiva para el evento">
       <div class="container">
         <div class="row text-center justify-content-center align-items-center">
@@ -355,9 +110,9 @@
       </div>
     </section>
 
-    <!-- ACCIÓN RÁPIDA: PÓSTER -->
+    <!-- PÓSTER -->
     <aside class="text-center my-5" aria-label="Afiche oficial del evento">
-      <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#posterModal" aria-haspopup="dialog">
+      <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#posterModal">
         <i class="fa-solid fa-image me-2" aria-hidden="true"></i>
         Ver póster del evento
       </button>
@@ -385,7 +140,7 @@
                 </div>
                 <div>
                   <h4 class="h5 mb-1">Estudiantes</h4>
-                  <p class="text-muted mb-0">Demuestran las competencias adquiridas durante el semestre mediante prototipos y software funcional.</p>
+                  <p class="text-muted mb-0">Demuestran las competencias adquiridas durante el semestre mediante software funcional.</p>
                 </div>
               </li>
               
@@ -405,7 +160,7 @@
                 </div>
                 <div>
                   <h4 class="h5 mb-1">Sector Productivo</h4>
-                  <p class="text-muted mb-0">Empresas aliadas descubren nuevo talento y evalúan la viabilidad comercial de las soluciones.</p>
+                  <p class="text-muted mb-0">Empresas aliadas descubren nuevo talento y evalúan la viabilidad comercial.</p>
                 </div>
               </li>
             </ul>
@@ -416,7 +171,7 @@
               <i class="fa-solid fa-lightbulb fa-4x mb-4" style="color: var(--accent);" aria-hidden="true"></i>
               <h3 class="fw-bold h4">Nuestra Misión</h3>
               <p class="mt-3" style="font-size: 1.1rem; opacity: 0.9;">
-                Fomentar la creatividad, el trabajo colaborativo y la excelencia técnica, preparando a los futuros Ingenieros en Sistemas para los retos del desarrollo tecnológico contemporáneo.
+                Fomentar la creatividad, el trabajo colaborativo y la excelencia técnica, preparando a los futuros Ingenieros en Sistemas para los retos de la industria tecnológica.
               </p>
               
               <hr class="border-light opacity-25 w-75 mx-auto my-4">
@@ -438,7 +193,7 @@
       </div>
     </section>
 
-    <!-- PROGRAMA DEL EVENTO -->
+    <!-- PROGRAMA -->
     <section id="programa" class="bg-white">
       <div class="container">
         <div class="section-title">
@@ -454,7 +209,7 @@
               <p><span class="program-time">10:00</span> Coffee Break & Networking</p>
               <p><span class="program-time">10:20</span> Sesión de evaluación por jueces</p>
               <p><span class="program-time">13:00</span> Ceremonia de Reconocimientos</p>
-              <p><span class="program-time">13:20</span> Fotografía oficial del evento (Edificio "L")</p>
+              <p><span class="program-time">13:20</span> Fotografía oficial (Edificio "L")</p>
             </article>
           </div>
           <div class="col-md-6">
@@ -463,30 +218,30 @@
               <p><span class="program-time">16:00</span> Exposición de proyectos vespertinos</p>
               <p><span class="program-time">19:00</span> Coffee Break</p>
               <p><span class="program-time">19:30</span> Entrega de Reconocimientos</p>
-              <p><span class="program-time">20:00</span> Fotografía oficial de clausura (Edificio "L")</p>
+              <p><span class="program-time">20:00</span> Fotografía de clausura (Edificio "L")</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DISTRIBUCIÓN DE LABORATORIOS -->
+    <!-- LABORATORIOS -->
     <section id="labs">
       <div class="container">
         <div class="section-title">
           <h2>Distribución de Laboratorios</h2>
-          <p>Consulta la ubicación y áreas de evaluación técnica en las instalaciones de la academia de Sistemas.</p>
+          <p>Consulta las áreas de evaluación técnica en las instalaciones de Sistemas.</p>
         </div>
         <div class="row g-4">
           <div class="col-md-6">
             <article class="card lab-card p-3 text-center h-100">
-              <img src="assets/img/labs/proximamente.png" alt="Croquis de laboratorios del turno matutino" class="img-fluid mb-3" loading="lazy"[cite: 14]>
+              <img src="assets/img/labs/proximamente.png" alt="Laboratorios turno matutino" class="img-fluid mb-3" loading="lazy">
               <h3 class="h5">Turno Matutino</h3>
             </article>
           </div>
           <div class="col-md-6">
             <article class="card lab-card p-3 text-center h-100">
-              <img src="assets/img/labs/proximamente.png" alt="Croquis de laboratorios del turno vespertino" class="img-fluid mb-3" loading="lazy"[cite: 14]>
+              <img src="assets/img/labs/proximamente.png" alt="Laboratorios turno vespertino" class="img-fluid mb-3" loading="lazy">
               <h3 class="h5">Turno Vespertino</h3>
             </article>
           </div>
@@ -494,8 +249,60 @@
       </div>
     </section>
 
-    <!-- SEDE DEL EVENTO -->
-    <section id="sede" class="bg-white">
+    <!-- CATÁLOGO INTERACTIVO CON FILTROS -->
+    <section id="proyectos" class="bg-white">
+      <div class="container">
+        <div class="section-title">
+          <h2>Proyectos Destacados</h2>
+          <p>Explora las propuestas más innovadoras desarrolladas por los estudiantes de ISC</p>
+        </div>
+
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-5" role="group" aria-label="Filtro de proyectos por categoría">
+          <button type="button" class="btn btn-outline-primary active filter-btn" data-filter="all">Todos</button>
+          <button type="button" class="btn btn-outline-primary filter-btn" data-filter="web">Web & Móvil</button>
+          <button type="button" class="btn btn-outline-primary filter-btn" data-filter="ia">Inteligencia Artificial</button>
+          <button type="button" class="btn btn-outline-primary filter-btn" data-filter="iot">IoT & Hardware</button>
+        </div>
+
+        <div class="row g-4" id="projectsContainer">
+          <div class="col-md-6 col-lg-4 project-item" data-category="web">
+            <article class="card h-100 p-3">
+              <div class="card-body">
+                <span class="badge bg-primary mb-2">Web & Móvil</span>
+                <h3 class="h5">Portal de Tutorías ISC</h3>
+                <p class="text-muted">Plataforma colaborativa para agendar sesiones académicas entre alumnos y asesores.</p>
+                <small class="text-secondary fw-bold">Semestre: 6to</small>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-category="ia">
+            <article class="card h-100 p-3">
+              <div class="card-body">
+                <span class="badge bg-success mb-2">Inteligencia Artificial</span>
+                <h3 class="h5">Clasificador de Lengua de Señas</h3>
+                <p class="text-muted">Red neuronal con visión computacional para traducción en tiempo real de señas mexicanas.</p>
+                <small class="text-secondary fw-bold">Semestre: 8vo</small>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 project-item" data-category="iot">
+            <article class="card h-100 p-3">
+              <div class="card-body">
+                <span class="badge bg-warning text-dark mb-2">IoT & Hardware</span>
+                <h3 class="h5">Estación Agroclimática IoT</h3>
+                <p class="text-muted">Monitoreo distribuido de humedad, temperatura y nutrientes en tiempo real con ESP32.</p>
+                <small class="text-secondary fw-bold">Semestre: 7mo</small>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEDE -->
+    <section id="sede">
       <div class="container">
         <div class="section-title">
           <h2>Sede del Evento</h2>
@@ -506,10 +313,7 @@
           <div class="col-md-6">
             <h3 class="h4">Mapa de la Unidad Académica</h3>
             <p>Edificio L, sede del evento, perteneciente a la Academia de Ingeniería en Sistemas Computacionales.</p>
-            <img src="./assets/img/labs-ubicacion.jpg"
-                 alt="Plano arquitectónico de ubicación del Edificio L en el Tecnológico Superior de Jalisco"
-                 class="img-fluid rounded shadow-sm w-100"
-                 loading="lazy"[cite: 14]>
+            <img src="./assets/img/labs-ubicacion.jpg" alt="Plano de ubicación Edificio L" class="img-fluid rounded shadow-sm w-100" loading="lazy">
           </div>
 
           <div class="col-md-6">
@@ -517,12 +321,11 @@
             <p>Camino Arenero 1101, Zapopan, Jalisco, México.</p>
             <div class="ratio ratio-4x3 rounded shadow-sm overflow-hidden">
               <iframe
-                title="Ubicación en Google Maps del Tecnológico Superior de Jalisco Zapopan"
+                title="Google Maps TSJ Zapopan"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9531.985587338153!2d-103.46917204999999!3d20.705047999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a92008505ae3%3A0xac0da90d95e836af!2sTecnol%C3%B3gico%20Superior%20de%20Jalisco%20Zapopan!5e0!3m2!1ses!2smx!4v1730899030301!5m2!1ses!2smx"
                 style="border:0;"
                 allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"[cite: 14]></iframe>
+                loading="lazy"></iframe>
             </div>
           </div>
         </div>
@@ -534,75 +337,42 @@
       <div class="container">
         <div class="section-title">
           <h2>Comité Organizador</h2>
-          <p>Equipo académico y docente responsable de la planeación y logística</p>
+          <p>Equipo académico y docente responsable de la planeación</p>
         </div>
         <div class="row g-4">
           <div class="col-sm-6 col-lg-3">
             <article class="card person-card">
-              <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-1/458610495_10230659795496885_6108370343858437953_n.jpg?stp=c103.31.386.386a_dst-jpg_tt6&cstp=mx386x386&ctp=s200x200&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=ogxznYdRAUwQ7kNvwH07oHF&_nc_oc=AdoO2y3KmzgJyrTixH-krhy8RBCL4NfFndrZ-xKG4-V5qZxx9kej9Me0O3IM2MZjF3o&_nc_zt=24&_nc_ht=scontent-qro1-2.xx&_nc_gid=etByCok0QyoZPJYMR4avDQ&_nc_ss=7b2a8&oh=00_AQMlFB3XwhnBQlvaLSQB_dMkmV4904NtB9L09f--NDk-1Q&oe=6ADBEBA6" alt="Fotografía de Nancy Ruiz Monroy, Coordinadora del evento" class="w-100" loading="lazy"[cite: 14]>
+              <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-1/458610495_10230659795496885_6108370343858437953_n.jpg?stp=c103.31.386.386a_dst-jpg_tt6&cstp=mx386x386&ctp=s200x200&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=ogxznYdRAUwQ7kNvwH07oHF&_nc_oc=AdoO2y3KmzgJyrTixH-krhy8RBCL4NfFndrZ-xKG4-V5qZxx9kej9Me0O3IM2MZjF3o&_nc_zt=24&_nc_ht=scontent-qro1-2.xx&_nc_gid=etByCok0QyoZPJYMR4avDQ&_nc_ss=7b2a8&oh=00_AQMlFB3XwhnBQlvaLSQB_dMkmV4904NtB9L09f--NDk-1Q&oe=6ADBEBA6" alt="Nancy Ruiz Monroy" class="w-100" loading="lazy">
               <div class="card-body text-center">
                 <h3 class="h6 mb-1">Nancy Ruiz Monroy</h3>
                 <small class="text-muted">Coordinadora</small>
               </div>
             </article>
           </div>
-         
           <div class="col-sm-6 col-lg-3">
             <article class="card person-card">
-              <img src="https://scontent-qro3-1.xx.fbcdn.net/v/t39.30808-6/469069327_10163217223923760_109229725857119630_n.jpg?stp=dst-jpg_tt6&cstp=mx480x480&ctp=s480x480&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8Ta9qShLxQsQ7kNvwHkcDrY&_nc_oc=Adr-13oxHIoo-Jx3K3fCz-b9GlBZS0ajLWE3D3U9IydSCqk6LAhu2b9y4LikC_o0XxM&_nc_zt=23&_nc_ht=scontent-qro3-1.xx&_nc_gid=iJsxyGkT6Fhysah1jj1PRQ&_nc_ss=7b2a8&oh=00_AQMQ2qG1fB2SGrc0ip61Ut_5vK3QpN3f01StLEVThXj5AA&oe=6ADBDC9B" alt="Fotografía de Quinatzin Reyes Gómez, Coordinador del evento" class="w-100" loading="lazy"[cite: 14]>
+              <img src="https://scontent-qro3-1.xx.fbcdn.net/v/t39.30808-6/469069327_10163217223923760_109229725857119630_n.jpg?stp=dst-jpg_tt6&cstp=mx480x480&ctp=s480x480&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8Ta9qShLxQsQ7kNvwHkcDrY&_nc_oc=Adr-13oxHIoo-Jx3K3fCz-b9GlBZS0ajLWE3D3U9IydSCqk6LAhu2b9y4LikC_o0XxM&_nc_zt=23&_nc_ht=scontent-qro3-1.xx&_nc_gid=iJsxyGkT6Fhysah1jj1PRQ&_nc_ss=7b2a8&oh=00_AQMQ2qG1fB2SGrc0ip61Ut_5vK3QpN3f01StLEVThXj5AA&oe=6ADBDC9B" alt="Quinatzin Reyes Gómez" class="w-100" loading="lazy">
               <div class="card-body text-center">
                 <h3 class="h6 mb-1">Quinatzin Reyes Gómez</h3>
                 <small class="text-muted">Coordinador</small>
               </div>
             </article>
           </div>
-
           <div class="col-sm-6 col-lg-3">
             <article class="card person-card">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS8NE9LM7TvvDi4sld6PGAmuStd6QfArTsyuqfPSHVEw&s=10" alt="Fotografía de León Miguel Ramos Corchado, Coordinador del evento" class="w-100" loading="lazy"[cite: 14]>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS8NE9LM7TvvDi4sld6PGAmuStd6QfArTsyuqfPSHVEw&s=10" alt="León Miguel Ramos Corchado" class="w-100" loading="lazy">
               <div class="card-body text-center">
                 <h3 class="h6 mb-1">León Miguel Ramos Corchado</h3>
                 <small class="text-muted">Coordinador</small>
               </div>
             </article>
           </div>
-
           <div class="col-sm-6 col-lg-3">
             <article class="card person-card">
-              <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/347629271_194538283519200_3500123676656223234_n.jpg?stp=dst-jpg_tt6&cstp=mx959x960&ctp=s959x960&_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=orRd6BK8FI0Q7kNvwG0t9MG&_nc_oc=Adr3en_f-3CuvsCXXUJcDzY_IdwctIdaSRw3Hu-hlTuSv7qTfRiCUe-HE2U3Ae7mLN0&_nc_zt=23&_nc_ht=scontent-qro1-1.xx&_nc_gid=JanFxEQhnvlmxkciUPn05A&_nc_ss=7b2a8&oh=00_AQOv552nOq32cMGzawlCpHznqbSBUOWbkATRQ2uCwS7DoA&oe=6ADBEDEB" alt="Fotografía de Irma Toscano Barajas, Colaboradora del evento" class="w-100" loading="lazy"[cite: 14]>
+              <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t39.30808-6/347629271_194538283519200_3500123676656223234_n.jpg?stp=dst-jpg_tt6&cstp=mx959x960&ctp=s959x960&_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=orRd6BK8FI0Q7kNvwG0t9MG&_nc_oc=Adr3en_f-3CuvsCXXUJcDzY_IdwctIdaSRw3Hu-hlTuSv7qTfRiCUe-HE2U3Ae7mLN0&_nc_zt=23&_nc_ht=scontent-qro1-1.xx&_nc_gid=JanFxEQhnvlmxkciUPn05A&_nc_ss=7b2a8&oh=00_AQOv552nOq32cMGzawlCpHznqbSBUOWbkATRQ2uCwS7DoA&oe=6ADBEDEB" alt="Irma Toscano Barajas" class="w-100" loading="lazy">
               <div class="card-body text-center">
                 <h3 class="h6 mb-1">Irma Toscano Barajas</h3>
                 <small class="text-muted">Colaboradora</small>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <article class="card person-card">
-              <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/813976436_938393469326892_8687484536586468731_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2041&ctp=s2048x2041&_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=VR0E2IxKcOAQ7kNvwFvQz3O&_nc_oc=AdqGXQ5YNK08JhOk0U4viP6x3Xm6NM_7R6tl2zoVzCvnVFisKXjOTa4IdvcapHYV1J0&_nc_zt=23&_nc_ht=scontent-qro1-2.xx&_nc_gid=1dDvcCXs8mg23aBEvjTfAA&_nc_ss=7b2a8&oh=00_AQOI_0zbtaHuk1w4dAzoTFY6_qP9FgmaoqVMXGSRMJuu9A&oe=6ADBE83C" alt="Fotografía de José Luis Garcia Cerpas, Colaborador del evento" class="w-100" loading="lazy"[cite: 14]>
-              <div class="card-body text-center">
-                <h3 class="h6 mb-1">José Luis Garcia Cerpas</h3>
-                <small class="text-muted">Colaborador</small>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <article class="card person-card">
-              <img src="https://scontent.fmex9-1.fna.fbcdn.net/v/t39.30808-6/649702332_26236621269313168_1634922824665613780_n.jpg?stp=dst-jpg_tt6&cstp=mx720x720&ctp=s720x720&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=mofZKfEWGRYQ7kNvwGzHjBk&_nc_oc=Adpf4u_THlu2H73uLp3yVaJfYH7fmMcaOGWYh_adRYJH_D0lbeHGIKFvetXZuVS_ieQ&_nc_zt=23&_nc_ht=scontent.fmex9-1.fna&_nc_gid=tfwTGvQaTZ39PPSr0xOtlQ&_nc_ss=7b2a8&oh=00_AQNoeMuHPREYx9dCnqBDND5FcawKA0cMSPX6EB55UC0OLA&oe=6ADC00B8" alt="Fotografía de Fabian Gonzalez Torres, Colaborador del evento" class="w-100" loading="lazy"[cite: 14]>
-              <div class="card-body text-center">
-                <h3 class="h6 mb-1">Fabian Gonzalez Torres</h3>
-                <small class="text-muted">Colaborador</small>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <article class="card person-card">
-              <img src="https://scontent-qro3-1.xx.fbcdn.net/v/t39.30808-6/474667810_1639573716933976_3592236700881100202_n.jpg?stp=dst-jpg_tt6&cstp=mx1533x2048&ctp=s1533x2048&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=pjpH9zjKBBgQ7kNvwFp8dqi&_nc_oc=Adr-tPYsq44WFyezk4h3i4qLzGFEdJSQ9p2UhVRHodzAfNDUV7J6wjKQfdJn9l6Su4I&_nc_zt=23&_nc_ht=scontent-qro3-1.xx&_nc_gid=YpHmcPE5c-Ix8WkhoYHzjA&_nc_ss=7b2a8&oh=00_AQNM1gKSOtPYijWQVR4r445YHc8-aui5u34Yps_b8SUOjw&oe=6ADBD623" alt="Fotografía de Rigoberto Cardenas Larios, Colaborador del evento" class="w-100" loading="lazy"[cite: 14]>
-              <div class="card-body text-center">
-                <h3 class="h6 mb-1">Rigoberto Cardenas Larios</h3>
-                <small class="text-muted">Colaborador</small>
               </div>
             </article>
           </div>
@@ -619,22 +389,22 @@
         </div>
         <div class="row g-4 align-items-center justify-content-center">
           <div class="col-6 col-md-3 text-center">
-            <img src="./assets/img/logos/86854456.png" class="img-fluid" alt="Logotipo de la empresa SoftServe" loading="lazy"[cite: 14]>
+            <img src="./assets/img/logos/86854456.png" class="img-fluid" alt="SoftServe" loading="lazy">
           </div>
           <div class="col-6 col-md-3 text-center">
-            <img src="./assets/img/logos/Recurso 1.png" class="img-fluid" alt="Logotipo de la empresa Zegnal Consulting" loading="lazy"[cite: 14]>
+            <img src="./assets/img/logos/Recurso 1.png" class="img-fluid" alt="Zegnal Consulting" loading="lazy">
           </div>
           <div class="col-6 col-md-3 text-center">
-            <img src="./assets/img/logos/34243242.png" class="img-fluid" alt="Logotipo de la empresa CodeNation" loading="lazy"[cite: 14]>
+            <img src="./assets/img/logos/34243242.png" class="img-fluid" alt="CodeNation" loading="lazy">
           </div>
           <div class="col-6 col-md-3 text-center">
-            <img src="./assets/img/logos/47993983.png" class="img-fluid" alt="Logotipo oficial de la Secretaría de Educación Jalisco" loading="lazy"[cite: 14]>
+            <img src="./assets/img/logos/47993983.png" class="img-fluid" alt="Secretaría de Educación Jalisco" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FORMULARIO INTERACTIVO CON VALIDACIÓN EN TIEMPO REAL -->
+    <!-- REGISTRO -->
     <section id="registro">
       <div class="container">
         <div class="section-title">
@@ -647,7 +417,6 @@
             <article class="card p-4 p-md-5">
               <form id="projectForm" novalidate>
                 <div class="row g-3">
-                  
                   <div class="col-md-6">
                     <label for="studentName" class="form-label fw-bold">Nombre del Líder del Proyecto *</label>
                     <input type="text" class="form-control" id="studentName" placeholder="Ej. Emiliano Hernández" required>
@@ -655,9 +424,9 @@
                   </div>
 
                   <div class="col-md-6">
-                    <label for="studentEmail" class="form-label fw-bold">Correo Institucional (@zapopan.tecmm.edu.mx) *</label>
+                    <label for="studentEmail" class="form-label fw-bold">Correo Institucional *</label>
                     <input type="email" class="form-control" id="studentEmail" placeholder="usuario@zapopan.tecmm.edu.mx" required>
-                    <div class="small mt-1 text-danger d-none" id="emailError">Debe ser un correo institucional válido (*.tecmm.edu.mx o *.edu.mx).</div>
+                    <div class="small mt-1 text-danger d-none" id="emailError">Debe ser un correo institucional (*.tecmm.edu.mx o *.edu.mx).</div>
                   </div>
 
                   <div class="col-md-6">
@@ -667,20 +436,19 @@
                   </div>
 
                   <div class="col-md-6">
-                    <label for="projectCategory" class="form-label fw-bold">Categoría / Área *</label>
+                    <label for="projectCategory" class="form-label fw-bold">Categoría *</label>
                     <select class="form-select" id="projectCategory" required>
                       <option value="" selected disabled>Selecciona una categoría...</option>
                       <option value="desarrollo-web">Desarrollo Web & Móvil</option>
                       <option value="ia-datos">Inteligencia Artificial & Ciencia de Datos</option>
                       <option value="iot-redes">Internet de las Cosas & Redes</option>
-                      <option value="ciberseguridad">Ciberseguridad & Sistemas Embebidos</option>
                     </select>
                     <div class="small mt-1 text-danger d-none" id="categoryError">Selecciona un área temática.</div>
                   </div>
 
                   <div class="col-12">
                     <label for="projectDescription" class="form-label fw-bold">Resumen de la Innovación (Mínimo 20 caracteres) *</label>
-                    <textarea class="form-control" id="projectDescription" rows="4" placeholder="Describe brevemente la problemática y cómo tu software o hardware lo resuelve..." required></textarea>
+                    <textarea class="form-control" id="projectDescription" rows="4" placeholder="Describe la problemática y cómo tu proyecto la resuelve..." required></textarea>
                     <div class="small mt-1 text-danger d-none" id="descError">La descripción debe tener al menos 20 caracteres.</div>
                   </div>
 
@@ -689,14 +457,12 @@
                       <i class="fa-solid fa-paper-plane me-2"></i>Enviar Registro
                     </button>
                   </div>
-
                 </div>
               </form>
 
-              <!-- Notificación de Éxito -->
               <div id="formSuccessAlert" class="alert alert-success mt-4 d-none text-center" role="alert">
                 <i class="fa-solid fa-circle-check me-2"></i>
-                <strong>¡Registro recibido con éxito!</strong> Nos pondremos en contacto a través de tu correo institucional.
+                <strong>¡Registro recibido con éxito!</strong> Nos pondremos en contacto vía correo institucional.
               </div>
             </article>
           </div>
@@ -704,7 +470,7 @@
       </div>
     </section>
 
-    <!-- LLAMADO A LA ACCIÓN (CTA) -->
+    <!-- CTA -->
     <section class="container">
       <div class="cta">
         <h2 class="mb-3 text-white">¡Participa y conoce los proyectos!</h2>
@@ -715,37 +481,32 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA SEMÁNTICO -->
+  <!-- FOOTER -->
   <footer>
     <div class="container py-5">
       <div class="row g-4">
         <div class="col-md-4">
-          <img src="./assets/img/logotsj.png" width="60" height="60" alt="Escudo institucional del TecMM Zapopan" class="mb-3" loading="lazy"[cite: 14]>
+          <img src="./assets/img/logotsj.png" width="60" height="60" alt="TecMM Zapopan" class="mb-3" loading="lazy">
           <p class="mb-0 fw-bold">Instituto Tecnológico José Mario Molina Pasquel y Henríquez</p>
-          <small>Unidad Académica Zapopan – Carrera de Ingeniería en Sistemas Computacionales</small>
+          <small>Unidad Académica Zapopan – ISC</small>
         </div>
 
         <div class="col-md-4">
           <h3 class="h6 text-white mb-3">Enlaces Rápidos</h3>
           <ul class="list-unstyled">
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#programa">Programa General</a></li>
+            <li><a href="#programa">Programa</a></li>
             <li><a href="#labs">Laboratorios</a></li>
-            <li><a href="#organizadores">Comité Organizador</a></li>
-            <li><a href="#registro">Registro de Proyectos</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#registro">Registro</a></li>
           </ul>
         </div>
 
         <div class="col-md-4">
-          <h3 class="h6 text-white mb-3">Contacto Académico</h3>
+          <h3 class="h6 text-white mb-3">Contacto</h3>
           <p class="mb-1"><strong>Dirección:</strong> Camino Arenero 1101, 45019 Zapopan, Jal.</p>
           <p class="mb-1"><strong>Teléfono:</strong> 33 3682 1180</p>
-          <p class="mb-2"><strong>Correo:</strong> ing.sistemas@zapopan.tecmm.edu.mx</p>
-          <div class="mt-3">
-            <a href="https://www.facebook.com/groups/isczapopan" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="Visitar el grupo de Facebook de ISC Zapopan"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="https://www.instagram.com/tsjzapopan/" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="Visitar el perfil oficial de Instagram de TSJ Zapopan"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="me-3" aria-label="Visitar el canal de Twitter / X de la carrera"><i class="fab fa-x-twitter fa-lg"></i></a>
-          </div>
+          <p class="mb-2"><strong>Email:</strong> ing.sistemas@zapopan.tecmm.edu.mx</p>
         </div>
       </div>
 
@@ -756,172 +517,23 @@
     </div>
   </footer>
 
-  <!-- MODAL DEL PÓSTER -->
-  <div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true"[cite: 14]>
+  <!-- MODAL PÓSTER -->
+  <div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
-
         <div class="modal-header">
-          <h5 class="modal-title" id="posterModalLabel">
-            Póster Oficial – XX Concurso de Proyectos de Innovación
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar ventana emergente"></button>
+          <h5 class="modal-title" id="posterModalLabel">Póster Oficial</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
-
         <div class="modal-body p-0" style="height:80vh;">
-          <iframe
-            title="Documento PDF del póster del evento"
-            src="./assets/pdf/poster.pdf"
-            style="width:100%; height:100%; border:none;"
-            loading="lazy"[cite: 14]>
-          </iframe>
+          <iframe title="Póster PDF" src="./assets/pdf/poster.pdf" style="width:100%; height:100%; border:none;" loading="lazy"></iframe>
         </div>
-
-        <div class="modal-footer">
-          <a href="./assets/pdf/poster.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">
-            <i class="fa-solid fa-up-right-from-square me-1"></i> Abrir en nueva pestaña
-          </a>
-        </div>
-
       </div>
     </div>
   </div>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPTS EXTERNOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // 1. LÓGICA DE MODO CLARO / OSCURO CON LOCALSTORAGE
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const htmlElement = document.documentElement;
-
-    // Cargar preferencia guardada o respetar la del sistema operativo
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    htmlElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = htmlElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      
-      htmlElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-      if (theme === 'dark') {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-      } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-      }
-    }
-
-    // 2. CUENTA REGRESIVA DINÁMICA
-    const eventDate = new Date("2026-11-25T09:00:00").getTime();
-
-const countdown = setInterval(function() {
- const now = new Date().getTime();
- const distance = eventDate - now;
-
- const days = Math.floor(distance / (1000 * 60 * 60 * 24));
- const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
- const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
- const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
- const formatTime = (time) => time < 10 ? `0${time}` : time;
-
- document.getElementById("cd-days").innerText = formatTime(days);
- document.getElementById("cd-hours").innerText = formatTime(hours);
- document.getElementById("cd-minutes").innerText = formatTime(minutes);
- document.getElementById("cd-seconds").innerText = formatTime(seconds);
-
- if (distance < 0) {
-   clearInterval(countdown);
-   document.getElementById("cd-days").innerText = "00";
-   document.getElementById("cd-hours").innerText = "00";
-   document.getElementById("cd-minutes").innerText = "00";
-   document.getElementById("cd-seconds").innerText = "00";
-   document.querySelector(".countdown-section h2").innerText = "¡El evento ha comenzado!";
- }
-}, 1000);
-
-    // 3. VALIDACIÓN INTERACTIVA DEL FORMULARIO EN TIEMPO REAL
-    const form = document.getElementById('projectForm');
-    const nameInput = document.getElementById('studentName');
-    const emailInput = document.getElementById('studentEmail');
-    const projectInput = document.getElementById('projectName');
-    const categorySelect = document.getElementById('projectCategory');
-    const descInput = document.getElementById('projectDescription');
-    const successAlert = document.getElementById('formSuccessAlert');
-
-    // Validador de correo institucional (.edu.mx o .tecmm.edu.mx)
-    const institutionalEmailRegex = /^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)*(?:tecmm|edu)\.mx$/i;
-
-    function validateField(input, condition, errorElementId) {
-      const errorElem = document.getElementById(errorElementId);
-      if (condition) {
-        input.classList.remove('is-invalid-custom');
-        input.classList.add('is-valid-custom');
-        errorElem.classList.add('d-none');
-        return true;
-      } else {
-        input.classList.remove('is-valid-custom');
-        input.classList.add('is-invalid-custom');
-        errorElem.classList.remove('d-none');
-        return false;
-      }
-    }
-
-    // Listeners de validación reactiva en tiempo real (input y change)
-    nameInput.addEventListener('input', () => {
-      validateField(nameInput, nameInput.value.trim().length >= 3, 'nameError');
-    });
-
-    emailInput.addEventListener('input', () => {
-      validateField(emailInput, institutionalEmailRegex.test(emailInput.value.trim()), 'emailError');
-    });
-
-    projectInput.addEventListener('input', () => {
-      validateField(projectInput, projectInput.value.trim().length >= 4, 'projectError');
-    });
-
-    categorySelect.addEventListener('change', () => {
-      validateField(categorySelect, categorySelect.value !== "", 'categoryError');
-    });
-
-    descInput.addEventListener('input', () => {
-      validateField(descInput, descInput.value.trim().length >= 20, 'descError');
-    });
-
-    // Envío del formulario
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const isNameValid = validateField(nameInput, nameInput.value.trim().length >= 3, 'nameError');
-      const isEmailValid = validateField(emailInput, institutionalEmailRegex.test(emailInput.value.trim()), 'emailError');
-      const isProjectValid = validateField(projectInput, projectInput.value.trim().length >= 4, 'projectError');
-      const isCategoryValid = validateField(categorySelect, categorySelect.value !== "", 'categoryError');
-      const isDescValid = validateField(descInput, descInput.value.trim().length >= 20, 'descError');
-
-      if (isNameValid && isEmailValid && isProjectValid && isCategoryValid && isDescValid) {
-        successAlert.classList.remove('d-none');
-        form.reset();
-        
-        // Limpiar clases de validación
-        [nameInput, emailInput, projectInput, categorySelect, descInput].forEach(elem => {
-          elem.classList.remove('is-valid-custom');
-        });
-
-        // Ocultar alerta después de 5 segundos
-        setTimeout(() => {
-          successAlert.classList.add('d-none');
-        }, 5000);
-      }
-    });
-  </script>
+  <script src="./main.js"></script>
 </body>
 </html>
